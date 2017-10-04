@@ -5,7 +5,7 @@
  */
 package plaza;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  *
@@ -15,31 +15,29 @@ public class Plaza {
     private int floor;
     private int number;
     private Vehicle vehicle;
-    public ArrayList<Vehicle> list = new ArrayList<>();
-    private int spaceAvailable = 30;
+    public HashMap<String,Vehicle> map = new HashMap<>();
+    private int spaceAvailable;
     
-    public Plaza(int f, int n, Vehicle v){
-        this.floor = f;
-        this.number = n;
-        this.vehicle = v;
+    public Plaza(int s){
+        this.spaceAvailable = s;
     }
     
-    public void park(){
+    public void park(int f, int n, Vehicle v){
         if(this.spaceAvailable!=0){
-            this.vehicle.parked = true;
-            list.add(this.vehicle);
+            v.parked = true;
+            map.put(String.valueOf(f)+String.valueOf(n),this.vehicle);
             this.spaceAvailable--;
-            System.out.println("The car "+this.vehicle.domain+" is parked.");
+            System.out.println("The car "+v.domain+" is parked.");
         }else{
             System.out.println("There is no more place!");
         }
     }
     
-    public void unPark(){
-        this.vehicle.parked = false;
-        list.remove(this.vehicle);
+    public void unPark(Vehicle v){
+        v.parked = false;
+        map.remove(v);
         this.spaceAvailable++;
-        System.out.println("The car "+this.vehicle.domain+"is un-parked.");
+        System.out.println("The car "+v.domain+" is un-parked.");
     }
     
 }

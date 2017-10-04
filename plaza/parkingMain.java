@@ -22,12 +22,10 @@ public class parkingMain {
         Car c2 = new Car("MNB555");
         Bus b1 = new Bus("LFD456");
         
-        Plaza park1 = new Plaza(1,2,c1);
-        park1.park();
-        Plaza park2 = new Plaza(1,2,c2);
-        park2.park();
-        Plaza park3 = new Plaza(1,2,m1);
-        park3.park();
+        Plaza park = new Plaza(30);
+        park.park(1,4,c2);
+        
+        park.unPark(c2);
         
     }
     
