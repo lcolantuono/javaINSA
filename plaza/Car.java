@@ -11,7 +11,9 @@ package plaza;
  */
 public class Car extends Vehicle{
     public Car(String d){
-        domain = d;
-        size = "Medium";
+        super();
+        this.domain = d;
+        this.size = "Medium";
+        this.number_places = 2;
     }
 }

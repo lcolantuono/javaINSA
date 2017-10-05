@@ -10,8 +10,44 @@ package plaza;
  * @author Lucas
  */
 public class Vehicle {
-    public String domain;
-    public String size;
-    public boolean parked;
+    String domain;
+    String size;
+    int number_places;
+    boolean parked;
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public int getNumber_places() {
+        return number_places;
+    }
+
+    public boolean isParked() {
+        return parked;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public void setNumber_places(int number_places) {
+        this.number_places = number_places;
+    }
+
+    public void setParked(boolean parked) {
+        this.parked = parked;
+    }
+
+    public Vehicle() {
+    }
     
 }

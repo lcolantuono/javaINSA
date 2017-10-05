@@ -11,7 +11,9 @@ package plaza;
  */
 public class Moto extends Vehicle{
     public Moto(String d){
-        domain = d;
-        size = "Small";
+        super();
+        this.domain = d;
+        this.size = "Small";
+        this.number_places = 1;
     }
 }

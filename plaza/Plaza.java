@@ -12,31 +12,40 @@ import java.util.*;
  * @author Lucas
  */
 public class Plaza {
-    private int floor;
-    private int number;
+    private HashMap<Integer,Level> mapLevels = new HashMap<>();
+    private final int floors;
     private Vehicle vehicle;
-    public HashMap<String,Vehicle> map = new HashMap<>();
-    private int spaceAvailable;
+    public ArrayList<Vehicle> mapVehicles = new ArrayList<>();
+    private int spaceAvailable = 30;
     
-    public Plaza(int s){
-        this.spaceAvailable = s;
+    public Plaza(int f){
+        this.floors = f;
     }
     
-    public void park(int f, int n, Vehicle v){
-        if(this.spaceAvailable!=0){
-            v.parked = true;
-            map.put(String.valueOf(f)+String.valueOf(n),this.vehicle);
-            this.spaceAvailable--;
-            System.out.println("The car "+v.domain+" is parked.");
+    public void createLevel(int num_level, int spaces, int disabled, int electric, int exits){
+        Level level = new Level(spaces, disabled, electric, exits);
+        this.mapLevels.put(num_level,level);
+    }
+    
+    public void park(Vehicle v){
+        if (v.isParked()){
+            System.out.println("The Vehicle is already parked!");
         }else{
-            System.out.println("There is no more place!");
+            if(this.spaceAvailable>=v.getNumber_places()){
+                v.parked = true;
+                mapVehicles.add(this.vehicle);
+                this.spaceAvailable-=v.getNumber_places();
+                System.out.println("The car "+v.domain+" is parked.");
+            }else{
+                System.out.println("There is no more place!");
+            }
         }
     }
     
     public void unPark(Vehicle v){
         v.parked = false;
-        map.remove(v);
-        this.spaceAvailable++;
+        mapVehicles.remove(v);
+        this.spaceAvailable+=v.getNumber_places();
         System.out.println("The car "+v.domain+" is un-parked.");
     }
     

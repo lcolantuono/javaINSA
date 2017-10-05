@@ -11,7 +11,9 @@ package plaza;
  */
 public class Bus extends Vehicle{
     public Bus(String d){
-        domain = d;
-        size = "Large";
+        super();
+        this.domain = d;
+        this.size = "Large";
+        this.number_places = 3;
     }
 }
