@@ -14,6 +14,7 @@ public class Vehicle {
     String size;
     int number_places;
     boolean parked;
+    boolean electric;
 
     public String getDomain() {
         return domain;
@@ -45,6 +46,14 @@ public class Vehicle {
 
     public void setParked(boolean parked) {
         this.parked = parked;
+    }
+    
+    public boolean isElectric() {
+        return electric;
+    }
+    
+    public void setElectric(boolean electric) {
+        this.electric = electric;
     }
 
     public Vehicle() {

@@ -12,12 +12,14 @@ package plaza;
 public class Level{
 
     private int total_spaces;
+    private int floor;
     private int electric_spaces;
     private int disabled_spaces;
     private int exits;
 
-    public Level(int total_spaces, int electric_spaces, int disabled_spaces, int exits) {
+    public Level(int total_spaces, int electric_spaces, int disabled_spaces, int exits, int floor) {
         this.total_spaces = total_spaces;
+        this.floor = floor;
         this.electric_spaces = electric_spaces;
         this.disabled_spaces = disabled_spaces;
         this.exits = exits;

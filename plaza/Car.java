@@ -16,4 +16,9 @@ public class Car extends Vehicle{
         this.size = "Medium";
         this.number_places = 2;
     }
+    
+    public Car(){
+        super();
+        this.size = "Medium";
+    }
 }

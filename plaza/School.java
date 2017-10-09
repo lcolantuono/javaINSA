@@ -9,12 +9,10 @@ package plaza;
  *
  * @author Lucas
  */
-public class Bus extends Vehicle{
-    public Bus(){
-        this.size = "Large";
-    }
-    public Bus(String domain){
-        this.domain = domain;
-        this.size = "Large";
+public class School extends Bus{
+    
+    public School(String d){
+        this.domain = d;
+        this.number_places = 5;
     }
 }
