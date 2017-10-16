@@ -1,0 +1,10 @@
+Bus,QW1234,E
+Bus,QW1234,L
+Electric,AF5555,E
+Electric,AF5555,E
+4x4,AS2222,E
+Car,FG9874,E
+Electric,AF5555,L
+Van,LO6543,E
+Electric,AF5555,L
+VAN,LO6543,l
